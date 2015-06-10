@@ -8,12 +8,11 @@
     <body>
         <div id="main">
             <h1>Let's Play Epi-Scrabble!</h1>
-            <form action='/playgame'>
-              <label>Player One:</label>
-              <input type="text" name="player_one">
-              <label>Player Two:</label>
-              <input type="text" name="player_two">
-              <button type='submit' class='btn btn-info'>It's on!</button>
+            <?php $one ?>
+            <form action='/result'>
+              Word:<br>
+              <input type="text" name="word">
+              <button type='submit' class='btn btn-info'>Score!</button>
            </form>
        </div>
     </body>

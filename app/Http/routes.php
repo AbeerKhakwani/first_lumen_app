@@ -13,13 +13,21 @@
 
 
 $app->get('/', function() use ($app){
-    return view('view1', ['name' => 'Abeer & Liz']);
+    return view('view1');
+});
+
+$app->post('/playgame', function() use ($app){
+    $player_one = $_GET['player_one'];
+    $player_two = $_GET['player_two'];
+    session(['firstplayer'=> $player_one, 'secondplayer', $player_two]);
+    $value = session('firstplayer');
+    return view('playgame', ['one'=> $value]);
 });
 
 $app->get('/result' , function() use ($app){
      $word= $_GET['word'];
-     $newGame= new Scrabble($word);
-     $result= $newGame->getPoints();
+     $newGame= new Scrabble();
+     $result= $newGame->getPoints($word);
      $hello  = "yes!";
      return view('result' , ['hello'=> $result, 'no' => $hello]);
 });
