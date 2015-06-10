@@ -19,7 +19,11 @@ $app->get('/', function() use ($app){
 $app->post('/playgame', function() use ($app){
     $player_one = $_GET['player_one'];
     $player_two = $_GET['player_two'];
-    session(['firstplayer'=> $player_one, 'secondplayer', $player_two]);
+
+    // Session::put('firstplayer', $player_one);
+    // Session::put('secondplayer', $player_two);
+    // session(['firstplayer'=> $player_one, 'secondplayer', $player_two]);
+
     $value = session('firstplayer');
     return view('playgame', ['one'=> $value]);
 });
