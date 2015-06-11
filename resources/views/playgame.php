@@ -8,7 +8,7 @@
     <body>
         <div id="main">
             <h1>Let's Play Epi-Scrabble!</h1>
-            <?php $one ?>
+            <?php echo $one  . ' '. $two ?>
             <form action='/result'>
               Word:<br>
               <input type="text" name="word">

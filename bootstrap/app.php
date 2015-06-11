@@ -3,7 +3,7 @@
 require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/../resources/src/Scrabble.php';
 
-// Dotenv::load(__DIR__.'/../');
+Dotenv::load(__DIR__.'/../');
 
 /*
 |--------------------------------------------------------------------------
@@ -58,8 +58,8 @@ $app->singleton(
 
  $app->middleware([
 //     'Illuminate\Cookie\Middleware\EncryptCookies',
-//     'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
-	 'Illuminate\Session\Middleware\StartSession',
+//     'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse'
+		'Illuminate\Session\Middleware\StartSession',
 //	'Illuminate\View\Middleware\ShareErrorsFromSession',
 //     'Laravel\Lumen\Http\Middleware\VerifyCsrfToken',
  ]);
