@@ -5,6 +5,6 @@
         <title>Epi-Scrabble!</title>
     </head>
     <body>
-        <p>Hello thanks for the word <?php echo $hello .  ' '. $no ?></p>
+        <p>Hello thanks for the word <?php echo $result ?></p>
     </body>
 </html>

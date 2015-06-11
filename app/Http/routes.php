@@ -17,18 +17,18 @@ $app->get('/', function() use ($app){
 });
 
 $app->get('/playgame', function() use ($app){
-    session(['one' => $_GET['player_one']]);
-    session(['two' => $_GET['player_two']]);
-    return view('playgame', ['one' => session('one'),'two' => session('two')]);
+    //Session::put('one',$_GET['player_one']);
+    $one=  $_GET['player_one'];
+    $two= $_GET['player_two'];
+    return view('playgame', ['one' => $one ,'two' => $two ]);
 });
 //
-// $app->get('/result' , function() use ($app){
-//      $word= $_GET['word'];
-//      $newGame= new Scrabble();
-//      $result= $newGame->getPoints($word);
-//      $hello  = "yes!";
-//      return view('result' , ['hello'=> $result, 'no' => $hello]);
-// });
+$app->get('/result' , function() use ($app){
+    $word= $_GET['word'];
+    $newGame= new Scrabble();
+    $result= $newGame->getPoints($word);
+    return view('result' , ['result'=> $result, ]);
+});
 //
 //
 // $app->get('/fun', function() use ($app) {
