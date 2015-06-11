@@ -19,20 +19,32 @@ $app->get('/', function() use ($app){
 });
 
 $app->get('/playgame', function() use ($app){
-    //Session::put('one',$_GET['player_one']);
-    //$_GET['player_one'];
-    $user =New User;
-    $user->name ='Abeer';
-    $user->lname ='Liz';
-    $user->save();
-    return 'All Done';
+    $player1 = New User;
+    $player2 = New User;
+    $player1->name = $_GET['player_one'];
+    $player2->name = $_GET['player_two'];
+    $player1->word = $_GET['word_one'];
+    $player2->word = $_GET['word_two'];
+    $player1->save();
+    $player2->save();
+    return view('play', ['one' => $player1->name, 'two' => $player2->name]);
 });
-//
+
 $app->get('/result' , function() use ($app){
-    $word= $_GET['word'];
     $newGame= new Scrabble();
-    $result= $newGame->getPoints($word);
-    return view('result' , ['result'=> $result, ]);
+
+    $word = DB::table('users')->where('id', '4')->value('word');
+
+    // $query =  DB::select('select word from users where id = 2');
+    // $word = $query->fetch(PDO::FETCH_ASSOC);
+    // var_dump($word);
+    // $word= "xzx";
+    // foreach($query as $user){
+    //     $word .= $user['word'];
+    //     var_dump($word);
+    // }
+    //$result= $newGame->getPoints($word);
+    return view('result' , ['result'=> $word]);
 });
 //
 //

@@ -5,6 +5,9 @@
         <title>Epi-Scrabble!</title>
     </head>
     <body>
-        <p>Your word's score is: <?php echo $result ?></p>
+        <div id="main">
+        <p>Welcome, <?php echo $one . ' & ' . $two ?></p>
+        <a href='/result' class="btn btn-danger">See Who Won!</a>
+    </div>
     </body>
 </html>
