@@ -5,7 +5,16 @@ require_once __DIR__.'/../resources/src/Scrabble.php';
 
 Dotenv::load(__DIR__.'/../');
 
+ session_start();
+if(empty($_SESSION['one'])){
+   $_SESSION['one'] = '';
+}
+if(empty($_SESSION['two'])){
+   $_SESSION['two'] = '';
+}
+   
 
+    // output yes
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -58,13 +67,13 @@ $app->singleton(
 |
 */
 
- //$app->middleware([
+ $app->middleware([
      //'Illuminate\Cookie\Middleware\EncryptCookies',
     //'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
-	//	'Illuminate\Session\Middleware\StartSession',
+	 //'Illuminate\Session\Middleware\StartSession'
    //	'Illuminate\View\Middleware\ShareErrorsFromSession',
    //     'Laravel\Lumen\Http\Middleware\VerifyCsrfToken',
- //]);
+ ]);
 
 // $app->routeMiddleware([
 
