@@ -33,16 +33,15 @@ $app->get('/playgame', function() use ($app){
 $app->get('/result' , function() use ($app){
     $newGame= new Scrabble();
 
-    $word = DB::table('users')->where('id', '4')->value('word');
-
-    // $query =  DB::select('select word from users where id = 2');
-    // $word = $query->fetch(PDO::FETCH_ASSOC);
-    // var_dump($word);
-    // $word= "xzx";
-    // foreach($query as $user){
-    //     $word .= $user['word'];
-    //     var_dump($word);
-    // }
+  //  $word = DB::table('users')->where('id', '4')->value('word');
+      DB::connection()->setFetchMode(PDO::FETCH_ASSOC);
+      $query =  DB::select('select word from users where id = 2');
+ 
+     $word= "";
+    foreach($query as $user){
+        $word .= $user['word'];
+       // var_dump($word);
+    }
     //$result= $newGame->getPoints($word);
     return view('result' , ['result'=> $word]);
 });
