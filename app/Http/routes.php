@@ -49,7 +49,8 @@ $app->get('/result' , function() use ($app){
         $word2 .= $user2['word'];
     
     }
-    $finalresult= $newGame->getPoints($word);
-    return view('result' , ['result'=> $word, 'one'=>$_SESSION['one'],'two'=>$_SESSION['two'], 'result2' => $word2 ]);
+    $finalresult1= $newGame->getPoints($word);
+    $finalresult2= $newGame->getPoints($word2);
+    return view('result' , ['result'=> $word, 'one'=>$_SESSION['one'],'two'=>$_SESSION['two'], 'result2' => $word2, 'points'=> $finalresult1, 'points2'=>$finalresult2 ]);
 });
 
