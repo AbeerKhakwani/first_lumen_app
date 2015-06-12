@@ -21,7 +21,13 @@
           }
           return $adder;
       }
-
+   function bigger($firstinput, $secondinput){
+      if ( $firstinput > $secondinput) {
+        return -1; 
+    } elseif ($secondinput > $firstinput) {
+        return 1;
+    }
+   }
  }
 
 ?>

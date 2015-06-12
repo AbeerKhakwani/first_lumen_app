@@ -15,6 +15,9 @@ class User extends Illuminate\Database\Eloquent\Model{
 }
 
 $app->get('/', function() use ($app){
+   $_SESSION['two'] = '';
+   $_SESSION['one'] = '';
+
     return view('view1');
 });
 
@@ -51,6 +54,19 @@ $app->get('/result' , function() use ($app){
     }
     $finalresult1= $newGame->getPoints($word);
     $finalresult2= $newGame->getPoints($word2);
-    return view('result' , ['result'=> $word, 'one'=>$_SESSION['one'],'two'=>$_SESSION['two'], 'result2' => $word2, 'points'=> $finalresult1, 'points2'=>$finalresult2 ]);
+    $bigger= $newGame->bigger($finalresult1,$finalresult2);
+
+    $winner='';
+
+    if ($bigger == 1){
+
+      $winner= $_SESSION['one'];
+    }
+    else{
+       $winner= $_SESSION['two'];
+
+    }
+
+    return view('result' , ['result'=> $word, 'one'=>$_SESSION['one'],'two'=>$_SESSION['two'], 'result2' => $word2, 'points'=> $finalresult1, 'points2'=>$finalresult2 , 'winner'=>$winner]);
 });
 

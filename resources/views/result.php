@@ -8,6 +8,6 @@
      <div id="main">
         <h1>PLayer <?php echo $one."'s"?> Word was : <?php echo $result ?> <br>Worth <?php echo $points ?>  points</h1>
           <h1>PLayer <?php echo $two."'s"?> Word was : <?php echo $result2 ?><br>Worth <?php echo $points2 ?>  points </h1>
-        </div>
+        <h3>The winner is  <?php echo $winner ?></h3></div>
     </body>
 </html>
