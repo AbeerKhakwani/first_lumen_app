@@ -11,11 +11,11 @@
             <form action='/playgame'>
               <label>Player One:</label>
               <input type="text" name="player_one">
-              <label>Player Ones Words:</label>
+              <label>Player One's Word:</label>
               <input type="text" name="word_one">
               <label>Player Two:</label>
               <input type="text" name="player_two">
-              <label>Player Ones Words:</label>
+              <label>Player Two's Word:</label>
               <input type="text" name="word_two">
               <button type='submit' class='btn btn-info'>It's on!</button>
            </form>

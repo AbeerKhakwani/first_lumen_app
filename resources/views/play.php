@@ -6,8 +6,13 @@
     </head>
     <body>
         <div id="main">
-        <p>Welcome, <?php echo $one . ' & ' . $two ?></p>
-        <a href='/result' class="btn btn-danger">See Who Won!</a>
+        <h1>Welcome, <?php echo $one . ' & ' . $two ?></h1>
+
+        <form action="/result"  method="get">
+            <input type="text"  name="id" value= <?php echo $id ?> hidden>
+            <input type="text"  name="id2" value= <?php echo $id2 ?> hidden>
+            <button class="btn btn-danger">See Who Won!</button>
+        </form>
     </div>
     </body>
 </html>

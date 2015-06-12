@@ -5,14 +5,15 @@ require_once __DIR__.'/../resources/src/Scrabble.php';
 
 Dotenv::load(__DIR__.'/../');
 
- session_start();
-if(empty($_SESSION['one'])){
-   $_SESSION['one'] = '';
-}
-if(empty($_SESSION['two'])){
-   $_SESSION['two'] = '';
-}
-   
+//  session_start();
+// if(empty($_SESSION['one'])){
+//    $_SESSION['one'] = 'empty';
+// }
+// if(empty($_SESSION['two'])){
+//    $_SESSION['two'] = 'empty';
+// }
+// echo $_SESSION['two'];
+
 
     // output yes
 /*

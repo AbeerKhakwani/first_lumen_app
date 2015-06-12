@@ -5,9 +5,12 @@
         <title>Epi-Scrabble!</title>
     </head>
     <body>
-     <div id="main">
-        <h1>PLayer <?php echo $one."'s"?> Word was : <?php echo $result ?> <br>Worth <?php echo $points ?>  points</h1>
-          <h1>PLayer <?php echo $two."'s"?> Word was : <?php echo $result2 ?><br>Worth <?php echo $points2 ?>  points </h1>
-        <h3>The winner is  <?php echo $winner ?></h3></div>
+        <div id="main">
+            <h1>The Winner is <strong><?php echo $winner ?></strong>!</h1>
+            <h4><?php echo $name."'s"?> word was: <strong><?php echo $result ?></strong> (<?php echo $points ?> points)</h4>
+            <h4><?php echo $name2."'s"?> word was: <strong><?php echo $result2 ?></strong> (<?php echo $points2 ?> points)</h4>
+            <br>
+            <a href = "/">Play again?</a>
+        </div>
     </body>
 </html>
