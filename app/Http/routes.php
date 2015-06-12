@@ -21,9 +21,8 @@ $app->get('/', function() use ($app){
 $app->get('/playgame', function() use ($app){
     $player1 = New User;
     $player2 = New User;
-    $player1->name = $_GET['player_one'];
-    $player2->name = $_GET['player_two'];
-    
+    $player1->name = $_GET['player_one']; 
+     $player2->name = $_GET['player_two'];
     $_SESSION['one']= $_GET['player_one'];
     $_SESSION['two'] = $_GET['player_two'];
     $player1->word = $_GET['word_one'];
@@ -38,17 +37,19 @@ $app->get('/result' , function() use ($app){
 
   //word = DB::table('users')->where('name', $_SESSION['one'])->value('word');
       DB::connection()->setFetchMode(PDO::FETCH_ASSOC);
-      $query =  DB::select("select word from users where name ='".$_SESSION['one']."'");
+    $query =  DB::select("select word from users where name ='".$_SESSION['one']."'");
      $word= "";
     foreach($query as $user){
         $word .= $user['word'];
        // var_dump($word);
     }
-    //$result= $newGame->getPoints($word);
-    return view('result' , ['result'=> $word]);
+     $query2 =  DB::select("select word from users where name ='".$_SESSION['two']."'");
+     $word2= "";
+    foreach($query2 as $user2){
+        $word2 .= $user2['word'];
+    
+    }
+    $finalresult= $newGame->getPoints($word);
+    return view('result' , ['result'=> $word, 'one'=>$_SESSION['one'],'two'=>$_SESSION['two'], 'result2' => $word2 ]);
 });
-//
-//
-// $app->get('/fun', function() use ($app) {
-//     return  "<h1>Fun Page!</h1>";
-// });
+

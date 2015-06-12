@@ -5,6 +5,9 @@
         <title>Epi-Scrabble!</title>
     </head>
     <body>
-        <p>Your word's score is: <?php echo $result ?></p>
+     <div id="main">
+        <h1>PLayer <?php echo $one."'s"?> Word was : <?php echo $result ?></h1>
+          <h1>PLayer <?php echo $two."'s"?> Word was : <?php echo $result2 ?></h1>
+        </div>
     </body>
 </html>
